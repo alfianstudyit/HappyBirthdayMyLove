@@ -430,9 +430,9 @@ p {
 
 <body>
 	<div class="loading"></div>
-  <img src="assets/images/photo1.jpg" class="album-photo album-left-1">
+  <img src="assets/images/photo1.jpg" class="album-photo album-left-1" data-letter="syukur">
   <!-- <img src="assets/images/photo2.jpg" class="album-photo album-left-2"> -->
-  <img src="assets/images/photo3.jpg" class="album-photo album-right-1">
+  <img src="assets/images/photo3.jpg" class="album-photo album-right-1" data-letter="ultah">
   <!-- <img src="assets/images/photo4.jpg" class="album-photo album-right-2"> -->
 
   <!-- Hint image -->
@@ -596,6 +596,8 @@ p {
   <!-- ==============================================================
        NEW: Lightbox markup — this is what zooms in then flips
        into the letter. The .lightbox-back content is your "surat".
+       Content is now filled dynamically by JS depending on which
+       photo was clicked (see data-letter attribute + LETTERS object).
        ============================================================== -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-card" id="lightboxCard">
@@ -605,12 +607,8 @@ p {
         <img id="lightboxImg" src="" alt="zoomed photo">
       </div>
 
-      <div class="lightbox-face lightbox-back">
-        <h2>Happy Birthday Sayangku Cintaku Fannykuu🎂</h2>
-        <p>Semoga Kamu diberi kesehatan dan selalu bahagia yaa</p>
-        <p>Makasih udah jadi bagian dari cerita ini, semoga tahun ini
-           lebih baik dari tahun-tahun sebelumnya.</p>
-        <p style="text-align:right; font-style:italic;">— dengan cinta</p>
+      <div class="lightbox-face lightbox-back" id="lightboxBack">
+        <!-- filled dynamically by JS -->
       </div>
     </div>
   </div>
@@ -622,26 +620,67 @@ p {
 
 <!-- ==============================================================
      NEW: click-to-zoom-then-flip-into-letter logic
+     Each photo now has its own letter (data-letter attribute),
+     picked from the LETTERS object below.
      ============================================================== -->
 <script>
   (function () {
     var lightbox     = document.getElementById('lightbox');
     var card         = document.getElementById('lightboxCard');
     var img          = document.getElementById('lightboxImg');
+    var backEl       = document.getElementById('lightboxBack');
     var closeBtn     = document.getElementById('lightboxClose');
 
     // any element with this class opens the letter effect when clicked
     var clickableSelectors = '.album-photo, .profile-img';
 
+    // ================= EDIT SURAT DI SINI =================
+    var LETTERS = {
+      syukur: {
+        title: "Terima Kasih, Sayangku 🤍",
+        paragraphs: [
+          "Setiap kali aku lihat foto ini, aku selalu inget betapa banyaknya hal kecil yang udah kita lewatin bareng. Dari yang awalnya cuma obrolan biasa, sampai akhirnya jadi bagian penting dalam hidupku. Aku nggak pernah nyangka satu orang bisa bikin hari-hariku jadi jauh lebih berarti kayak gini.",
+          "Aku bersyukur banget karena selama ini kamu selalu ada, baik di saat aku lagi seneng maupun di saat aku lagi capek dan nggak tahu harus cerita ke siapa. Kamu dengerin tanpa ngehakimin, kamu sabar walau kadang aku susah dimengerti, dan kamu tetap milih untuk stay meskipun banyak hal yang mungkin nggak mudah.",
+          "Terima kasih udah jadi tempat aku pulang. Terima kasih udah nemenin proses aku jadi lebih baik, dan mau bertumbuh bareng-bareng meskipun kita masih sama-sama belajar. Aku sadar aku bukan orang yang sempurna, tapi kamu selalu bikin aku ngerasa cukup apa adanya.",
+          "Terima kasih juga untuk semua tawa, semua candaan receh yang cuma kita yang ngerti, dan semua momen simpel yang ternyata jadi kenangan paling berharga. Buat aku, kebersamaan sama kamu itu bukan soal hal-hal besar, tapi soal hal-hal kecil yang dilakuin terus-menerus dengan tulus.",
+          "Aku nggak tahu ke depannya bakal kayak gimana, tapi satu yang aku yakin: aku bersyukur banget karena semesta pernah mempertemukan kita. Semoga rasa syukur ini nggak pernah luntur, dan semoga kita bisa terus jaga apa yang udah kita bangun selama ini.",
+          "Makasih ya, buat semuanya. Makasih udah jadi kamu."
+        ]
+      },
+      ultah: {
+        title: "Happy Birthday, Cintaku 🎂",
+        paragraphs: [
+          "Selamat ulang tahun, sayang! Semoga di usia yang baru ini, semua langkah yang kamu ambil selalu dimudahkan, semua rencana yang kamu susun selalu diridhoi, dan semua mimpi yang kamu perjuangkan pelan-pelan bisa terwujud satu per satu.",
+          "Hari ini bukan cuma soal nambah umur, tapi juga soal nambah pelajaran, nambah pengalaman, dan nambah alasan buat kamu makin bangga sama diri kamu sendiri. Kamu udah lewatin banyak hal, dan aku bangga banget lihat kamu terus berjuang sampai sejauh ini.",
+          "Aku doain kesehatan kamu selalu dijaga. Semoga kamu jauh dari sakit, jauh dari capek yang berlebihan, dan selalu punya energi buat jalanin hari-hari dengan semangat. Jangan lupa istirahat yang cukup, makan yang teratur, dan jangan terlalu keras sama diri sendiri, ya.",
+          "Semoga hati kamu juga selalu tenang. Semoga kamu dikelilingi orang-orang yang beneran sayang sama kamu, semoga rezekimu lancar, dan semoga setiap doa baik yang kamu panjatkan selalu didengar dan dikabulkan pada waktu yang tepat.",
+          "Kalau nanti ada hari yang berat, inget aja kalau kamu nggak sendirian. Aku ada di sini, siap nemenin, siap dengerin, dan siap bantu sebisa aku. Kamu berhak buat bahagia, dan aku akan selalu berusaha jadi bagian dari kebahagiaan itu.",
+          "Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagia dari tahun ke tahun. Aku sayang kamu."
+        ]
+      }
+    };
+    // ========================================================
+
     document.addEventListener('click', function (e) {
       var target = e.target.closest ? e.target.closest(clickableSelectors) : null;
       if (!target) return;
 
-      openLetter(target.getAttribute('src'));
+      var key = target.getAttribute('data-letter');
+      var letter = LETTERS[key] || LETTERS.syukur; // fallback kalau nggak ada key-nya
+
+      openLetter(target.getAttribute('src'), letter);
     });
 
-    function openLetter(src) {
+    function openLetter(src, letter) {
       img.src = src;
+
+      // render surat sesuai foto yang diklik
+      var html = '<h2>' + letter.title + '</h2>';
+      letter.paragraphs.forEach(function (p) {
+        html += '<p>' + p + '</p>';
+      });
+      backEl.innerHTML = html;
+
       card.classList.remove('flipped');
       lightbox.classList.add('show');
 
