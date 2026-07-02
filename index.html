@@ -9,7 +9,7 @@
 	<meta charset="UTF-8" />
 	<meta name="description" content="Happy Birthday Anggie">
 	<meta name="robots" content="index, follow" />
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 	<link rel="author" href="alex" /> 
     <meta name="keywords" content="Birthday, Happy">
 
@@ -27,12 +27,10 @@
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="css/loading.css">
 	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
 	<link rel="stylesheet/less" href="cake.less"> 
 	<style type="text/css" id="less:birthday-cake">
     
-    /* ============================================== POSITION
-*/
+    /* ============================================== POSITION */
 .cake {
   position: absolute;
   display: none;
@@ -41,8 +39,7 @@
   width: 300px;
   height: 300px;
 }
-/* ============================================== BASE
-*/
+/* ============================================== BASE */
 .cake:after {
   background: #ffffff;
   border-radius: 300px;
@@ -53,8 +50,7 @@
   width: 300px;
   height: 6px;
 }
-/* ============================================== Candle
-*/
+/* ============================================== Candle */
 .velas {
   background: #ffffff;
   border-radius: 100%;
@@ -74,16 +70,10 @@
   width: 100%;
   height: 6.66666667px;
 }
-.velas:after {
-  top: 25%;
-  left: 0;
-}
-.velas:before {
-  top: 45%;
-  left: 0;
-}
-/* ============================================== Fire
-*/
+.velas:after { top: 25%; left: 0; }
+.velas:before { top: 45%; left: 0; }
+
+/* ============================================== Fire */
 .fuego {
   display: none;
   border-radius: 100%;
@@ -95,99 +85,13 @@
   width: 20px;
   height: 37.5px;
 }
-.fuego:nth-child(1) {
-  -webkit-animation: fuego 2s infinite;
-  -moz-animation: fuego 2s infinite;
-  -o-animation: fuego 2s infinite;
-  -ms-animation: fuego 2s infinite;
-  animation: fuego 2s infinite;
-}
-.fuego:nth-child(2) {
-  -webkit-animation: fuego 1.5s infinite;
-  -moz-animation: fuego 1.5s infinite;
-  -o-animation: fuego 1.5s infinite;
-  -ms-animation: fuego 1.5s infinite;
-  animation: fuego 1.5s infinite;
-}
-.fuego:nth-child(3) {
-  -webkit-animation: fuego 1s infinite;
-  -moz-animation: fuego 1s infinite;
-  -o-animation: fuego 1s infinite;
-  -ms-animation: fuego 1s infinite;
-  animation: fuego 1s infinite;
-}
-.fuego:nth-child(4) {
-  -webkit-animation: fuego 0.5s infinite;
-  -moz-animation: fuego 0.5s infinite;
-  -o-animation: fuego 0.5s infinite;
-  -ms-animation: fuego 0.5s infinite;
-  animation: fuego 0.5s infinite;
-}
-.fuego:nth-child(5) {
-  -webkit-animation: fuego 0.2s infinite;
-  -moz-animation: fuego 0.2s infinite;
-  -o-animation: fuego 0.2s infinite;
-  -ms-animation: fuego 0.2s infinite;
-  animation: fuego 0.2s infinite;
-}
-/* ============================================== Animation Fire
-*/
-@-webkit-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -webkit-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -webkit-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -webkit-transform: translateY(0) scale(1);
-  }
-}
-@-moz-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -moz-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -moz-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -moz-transform: translateY(0) scale(1);
-  }
-}
-@-o-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -o-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -o-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -o-transform: translateY(0) scale(1);
-  }
-}
-@-ms-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -ms-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -ms-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -ms-transform: translateY(0) scale(1);
-  }
-}
+.fuego:nth-child(1) { animation: fuego 2s infinite; }
+.fuego:nth-child(2) { animation: fuego 1.5s infinite; }
+.fuego:nth-child(3) { animation: fuego 1s infinite; }
+.fuego:nth-child(4) { animation: fuego 0.5s infinite; }
+.fuego:nth-child(5) { animation: fuego 0.2s infinite; }
+
+/* ============================================== Animation Fire */
 @keyframes fuego {
   0% {
     background: rgba(254, 248, 97, 0.5);
@@ -202,8 +106,8 @@
     transform: translateY(0) scale(1);
   }
 }
-/* ============================================== Frosting
-*/
+
+/* ============================================== Frosting */
 .cobertura {
   background: #ece7e3;
   border-radius: 150px;
@@ -225,16 +129,10 @@
   width: 15px;
   height: 30px;
 }
-.cobertura:after {
-  top: 20px;
-  right: 42.85714286px;
-}
-.cobertura:before {
-  top: 30px;
-  right: 27.27272727px;
-}
-/* ============================================== BIZCOCHO
-*/
+.cobertura:after { top: 20px; right: 42.85714286px; }
+.cobertura:before { top: 30px; right: 27.27272727px; }
+
+/* ============================================== BIZCOCHO */
 .bizcocho {
   background: #6d3826;
   position: absolute;
@@ -252,76 +150,91 @@
   width: 100%;
   height: 15px;
 }
-.bizcocho:after {
-  top: 30%;
-  left: 0;
-}
-.bizcocho:before {
-  top: 60%;
-  left: 0;
-}
+.bizcocho:after { top: 30%; left: 0; }
+.bizcocho:before { top: 60%; left: 0; }
 
-/* ============================================== Album
-*/
+/* ============================================== Album */
 .album-photo {
   display: none;
   position: absolute;
-  width: 300px; /* looks like landscape photo */
+  width: 300px; 
   height: auto;
   border: 5px solid white;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   border-radius: 10px;
   transition: transform 0.3s ease;
-  cursor: pointer; /* NEW: shows it's clickable */
+  cursor: pointer; 
 }
-
 .album-photo:hover {
   transform: scale(1.05) rotate(0deg);
   z-index: 10;
 }
-
 /* Left side */
 .album-left-1 { top: 30px; left: 50px; transform: rotate(-5deg); }
-.album-left-2 { top: 205px; left: 70px; transform: rotate(4deg); }
-
 /* Right side */
 .album-right-1 { top: 30px; right: 50px; transform: rotate(5deg); }
-.album-right-2 { top: 205px; right: 70px; transform: rotate(-4deg); }
 
-
-/* ============================================== TEXT
-*/
-h1,
-p {
+/* ============================================== TEXT */
+h1, p {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-style: italic;
   text-align: center;
   width: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 .profile-img {
-  position: absolute; /* relative to .cake */
-  bottom: 30px;  /* 10px below cake */
-  right: -170px;  /* 70px to the right of cake */
+  position: absolute; 
+  bottom: 30px;  
+  right: -170px;  
   width: 150px;
   height: 150px;
   border: 5px solid white;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   border-radius: 10px;
-  cursor: pointer; /* NEW: shows it's clickable */
+  cursor: pointer; 
 }
 
 /* ==============================================================
-   NEW: Lightbox / zoom-into-letter effect
+   RESPONSIVE ADJUSTMENTS FOR MOBILE
    ============================================================== */
+@media (max-width: 768px) {
+  .profile-img {
+    right: -50px;
+    width: 120px;
+    height: 120px;
+  }
+  .album-photo {
+    width: 200px;
+  }
+  .album-left-1 { left: 10px; }
+  .album-right-1 { right: 10px; }
+}
 
+@media (max-width: 480px) {
+  .profile-img {
+    right: -10px;
+    width: 90px;
+    height: 90px;
+    bottom: 50px;
+  }
+  .cake {
+    transform: scale(0.85);
+  }
+  .album-photo {
+    width: 140px;
+    top: 60px;
+  }
+  .album-left-1 { left: 5px; }
+  .album-right-1 { right: 5px; }
+}
+
+/* ==============================================================
+   Lightbox / zoom-into-letter effect
+   ============================================================== */
 .lightbox {
-  display: none;              /* toggled to flex by JS */
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -331,34 +244,27 @@ p {
   transition: background 0.4s ease;
   perspective: 1600px;
 }
-
 .lightbox.show {
   display: flex;
   background: rgba(0, 0, 0, 0.65);
 }
-
-/* the flipping card that lives inside the lightbox */
 .lightbox-card {
   position: relative;
   width: min(90vw, 480px);
   height: min(80vh, 600px);
   transform: scale(0.3);
   opacity: 0;
-  transition: transform 0.45s cubic-bezier(.2,.8,.2,1),
-              opacity 0.35s ease;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
   transform-style: preserve-3d;
   cursor: default;
 }
-
 .lightbox.show .lightbox-card {
   transform: scale(1);
   opacity: 1;
 }
-
 .lightbox.show .lightbox-card.flipped {
   transform: scale(1) rotateY(180deg);
 }
-
 .lightbox-face {
   position: absolute;
   inset: 0;
@@ -366,7 +272,6 @@ p {
   border-radius: 10px;
   overflow: hidden;
 }
-
 .lightbox-front img {
   width: 100%;
   height: 100%;
@@ -376,7 +281,6 @@ p {
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   display: block;
 }
-
 .lightbox-back {
   transform: rotateY(180deg);
   background: #fffdf7;
@@ -386,26 +290,25 @@ p {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-y: auto;
 }
-
 .lightbox-back h2 {
-  margin: 0 0 12px;
+  margin: 0 0 20px;
   color: #e05a8a;
   font-family: 'Signika', sans-serif;
   font-style: normal;
   text-align: center;
+  font-size: 24px;
 }
-
 .lightbox-back p {
   color: #3a2e2e;
   font-style: normal;
   line-height: 1.6;
   font-size: 15px;
-  margin: 0 0 8px;
+  margin: 0 0 15px;
+  text-align: center;
 }
-
 .lightbox-close {
   position: absolute;
   top: -18px;
@@ -423,80 +326,46 @@ p {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 2;
 }
-
 </style>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
 
 <body>
 	<div class="loading"></div>
-  <img src="assets/images/photo1.jpg" class="album-photo album-left-1">
-  <!-- <img src="assets/images/photo2.jpg" class="album-photo album-left-2"> -->
-  <img src="assets/images/photo3.jpg" class="album-photo album-right-1">
-  <!-- <img src="assets/images/photo4.jpg" class="album-photo album-right-2"> -->
+  <!-- PERHATIKAN: Menambahkan atribut data-letter untuk menautkan ke surat yang berbeda -->
+  <img src="assets/images/photo1.jpg" class="album-photo album-left-1" data-letter="surat-1">
+  <img src="assets/images/photo3.jpg" class="album-photo album-right-1" data-letter="surat-2">
 
-  <!-- Hint image -->
   <img src="assets/images/can-zoom.png" class="can-zoom">
 
 	<audio class="song" controls loop>
         <source src="assets/audio/hbd.mp3"></source>
 	   Your browser isn't invited for super fun audio time.
     </audio>
-    <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
-    </div>
-    <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
-    </div>
-	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">D</h2>
-    </div>
-	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">F</h2>
-    </div>
-	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">A</h2>
-    </div>
-    <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">N</h2>
-    </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 style="color:#20CFB4;">I</h2>
-    </div>
+    <div class="balloons text-center" id="b1"><h2 style="color:#F2B300;">H</h2></div>
+    <div class="balloons text-center" id="b2"><h2 style="color:#0719D4;">B</h2></div>
+	<div class="balloons text-center" id="b3"><h2 style="color:#D14D39;">D</h2></div>
+	<div class="balloons text-center" id="b4"><h2 style="color:#8FAD00;">F</h2></div>
+	<div class="balloons text-center" id="b5"><h2 style="color:#8377E4;">A</h2></div>
+    <div class="balloons text-center" id="b6"><h2 style="color:#99C96A;">N</h2></div>
+    <div class="balloons text-center" id="b7"><h2 style="color:#20CFB4;">I</h2></div>
 
     <img src="assets/images/Balloon-Border.png" width="100%" class="balloon-border">
  
-
 	<div class="container">
-		
 		<div class="row">
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_yellow"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_red"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_blue"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_green"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_pink"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_orange"></div>
-			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_yellow"></div></div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_red"></div></div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_blue"></div></div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_green"></div></div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_pink"></div></div>
+			<div class="col-md-2 col-xs-2 bulb-holder"><div class="bulb" id="bulb_orange"></div></div>
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<img src="assets/images/banner.png" class="bannar">
 			</div>
 		</div>
-		<!-- <div class="row message">
-			<div class="col-md-12"><p>Khushbu</p></div>
-		</div> -->
 		<div class="row cake-cover">
 			<div class="col-md-12 texr-center">
 				<div class="cake">
@@ -508,7 +377,8 @@ p {
 				    <div class="fuego"></div>
 				  </div>
 				  <div class="cobertura"></div>
-          <img src="assets/images/person.png" class="profile-img">
+          <!-- Menambahkan data-letter juga untuk foto profil -->
+          <img src="assets/images/person.png" class="profile-img" data-letter="surat-1">
 				  <div class="bizcocho"></div>
 				</div>
 			</div>
@@ -531,7 +401,7 @@ p {
 				<p>a piece of happiness to you</p>
 				<p>I made all this...</p>
 				<p>as a birthday present to you</p>
-				<p>I'm glad we met on zzz</p>
+				<p>I'm glad we met</p>
 				<p>thanks for the friendship we made</p>
 				<p>thanks for everything</p>
 				<p>I wish you all the best</p>
@@ -575,28 +445,34 @@ p {
 					<button class="btn btn-primary" id="light_candle">Don't forget to Light the Candle</button>
 					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
 					<button class="btn btn-primary" id="story">A mesage for my love</button>
-					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
 				</div>
 			</div>
-			<!-- <div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div> -->
 		</div>
-
-
 	</div>
 
-  <!-- ==============================================================
-       NEW: Lightbox markup — this is what zooms in then flips
-       into the letter. The .lightbox-back content is your "surat".
-       ============================================================== -->
+  <!-- ISI SURAT 1 (DISEMBUNYIKAN) -->
+  <div id="surat-1" style="display: none;">
+    <h2>Happy Birthday Sayangku Cintaku Fannykuu 🎂</h2>
+    <p>Selamat ulang tahun, sayang! Semoga di usia yang baru ini, semua langkah yang kamu ambil selalu dimudahkan, semua rencana yang kamu susun selalu diridhoi, dan semua mimpi yang kamu perjuangkan pelan-pelan bisa terwujud satu per satu.</p>
+    <p>Hari ini bukan cuma soal nambah umur, tapi juga soal nambah pelajaran, nambah pengalaman, dan nambah alasan buat kamu makin bangga sama diri kamu sendiri. Kamu udah lewatin banyak hal, dan aku bangga banget lihat kamu terus berjuang sampai sejauh ini.</p>
+    <p>Aku doain kesehatan kamu selalu dijaga. Semoga kamu jauh dari sakit, jauh dari capek yang berlebihan, dan selalu punya energi buat jalanin hari-hari dengan semangat. Jangan lupa istirahat yang cukup, makan yang teratur, dan jangan terlalu keras sama diri sendiri, ya.</p>
+    <p>Semoga hati kamu juga selalu tenang. Semoga kamu dikelilingi orang-orang yang beneran sayang sama kamu, semoga rezekimu lancar, dan semoga setiap doa baik yang kamu panjatkan selalu didengar dan dikabulkan pada waktu yang tepat.</p>
+    <p>Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagia dari tahun ke tahun. Aku sayang kamu ❤️</p>
+    <p style="text-align:right; font-style:italic; margin-top: 20px;">— your so much loveeee</p>
+  </div>
+
+  <!-- ISI SURAT 2 (DISEMBUNYIKAN) -->
+  <div id="surat-2" style="display: none;">
+    <h2>Untuk Kamu yang Paling Spesial ❤️</h2>
+    <p>Hai cantik, di hari ulang tahunmu ini aku cuma mau bilang terima kasih. Terima kasih sudah hadir dan jadi warna yang paling indah di hidup aku.</p>
+    <p>Setiap detik bareng kamu itu berharga banget. Melihat kamu senyum, dengerin cerita kamu, bahkan saat kita cuma diam berdua, semuanya terasa pas karena itu sama kamu. Kamu selalu punya cara buat bikin aku bahagia dengan hal-hal yang sederhana.</p>
+    <p>Semoga di tahun ini, kasih sayang kita makin kuat ya. Semoga kamu selalu merasa dihargai, disayangi, dan nggak pernah merasa kurang, karena di mataku kamu udah lebih dari cukup.</p>
+    <p>Terus jadi Fanny yang ceria, yang baik hatinya, dan yang selalu bikin aku jatuh cinta setiap harinya. Kalau nanti ada hari yang berat, ingat kalau kamu nggak sendirian. Aku selalu ada di sini, siap jadi tempat kamu pulang.</p>
+    <p>I love you to the moon and back!</p>
+    <p style="text-align:right; font-style:italic; margin-top: 20px;">— dari aku yang sangat mencintaimu</p>
+  </div>
+
+  <!-- Lightbox Letter (Tempat untuk memunculkan surat) -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-card" id="lightboxCard">
       <button class="lightbox-close" id="lightboxClose">&times;</button>
@@ -605,15 +481,8 @@ p {
         <img id="lightboxImg" src="" alt="zoomed photo">
       </div>
 
-      <div class="lightbox-face lightbox-back">
-        <h2>Happy Birthday Sayangku Cintaku Fannykuu🎂</h2>
-        <p>Selamat ulang tahun, sayang! Semoga di usia yang baru ini, semua langkah yang kamu ambil selalu dimudahkan, semua rencana yang kamu susun selalu diridhoi, dan semua mimpi yang kamu perjuangkan pelan-pelan bisa terwujud satu per satu.
-Hari ini bukan cuma soal nambah umur, tapi juga soal nambah pelajaran, nambah pengalaman, dan nambah alasan buat kamu makin bangga sama diri kamu sendiri. Kamu udah lewatin banyak hal, dan aku bangga banget lihat kamu terus berjuang sampai sejauh ini
-Aku doain kesehatan kamu selalu dijaga. Semoga kamu jauh dari sakit, jauh dari capek yang berlebihan, dan selalu punya energi buat jalanin hari-hari dengan semangat. Jangan lupa istirahat yang cukup, makan yang teratur, dan jangan terlalu keras sama diri sendiri, ya
-Semoga hati kamu juga selalu tenang. Semoga kamu dikelilingi orang-orang yang beneran sayang sama kamu, semoga rezekimu lancar, dan semoga setiap doa baik yang kamu panjatkan selalu didengar dan dikabulkan pada waktu yang tepat
-Kalau nanti ada hari yang berat, inget aja kalau kamu nggak sendirian. Aku ada di sini, siap nemenin, siap dengerin, dan siap bantu sebisa aku.
-Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagia dari tahun ke tahun. Aku sayang kamu</p>
-        <p style="text-align:right; font-style:italic;">— dengan cinta</p>
+      <!-- Div kosong ini akan diisi oleh JavaScript sesuai surat yang diklik -->
+      <div class="lightbox-face lightbox-back" id="lightboxContent">
       </div>
     </div>
   </div>
@@ -623,33 +492,37 @@ Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagi
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="js/effect.js"></script>
 
-<!-- ==============================================================
-     NEW: click-to-zoom-then-flip-into-letter logic
-     ============================================================== -->
+<!-- Click-to-zoom logic -->
 <script>
   (function () {
-    var lightbox     = document.getElementById('lightbox');
-    var card         = document.getElementById('lightboxCard');
-    var img          = document.getElementById('lightboxImg');
-    var closeBtn     = document.getElementById('lightboxClose');
+    var lightbox       = document.getElementById('lightbox');
+    var card           = document.getElementById('lightboxCard');
+    var img            = document.getElementById('lightboxImg');
+    var content        = document.getElementById('lightboxContent');
+    var closeBtn       = document.getElementById('lightboxClose');
 
-    // any element with this class opens the letter effect when clicked
     var clickableSelectors = '.album-photo, .profile-img';
 
     document.addEventListener('click', function (e) {
       var target = e.target.closest ? e.target.closest(clickableSelectors) : null;
       if (!target) return;
 
-      openLetter(target.getAttribute('src'));
+      var imgSrc = target.getAttribute('src');
+      var letterId = target.getAttribute('data-letter') || 'surat-1'; // Default ke surat-1 jika tidak ada
+      
+      openLetter(imgSrc, letterId);
     });
 
-    function openLetter(src) {
+    function openLetter(src, letterId) {
       img.src = src;
+      
+      // Mengambil HTML dari surat yang disembunyikan dan memasukkannya ke dalam lightbox
+      var letterHTML = document.getElementById(letterId).innerHTML;
+      content.innerHTML = letterHTML;
+
       card.classList.remove('flipped');
       lightbox.classList.add('show');
 
-      // step 1: zoom in (handled by CSS transition on .show)
-      // step 2: after the zoom finishes, flip to reveal the letter
       setTimeout(function () {
         card.classList.add('flipped');
       }, 500);
@@ -665,7 +538,6 @@ Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagi
       closeLetter();
     });
 
-    // click on the dark backdrop (but not the card itself) closes it
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) closeLetter();
     });
@@ -678,7 +550,6 @@ Sekali lagi, happy birthday. Semoga panjang umur, sehat selalu, dan makin bahagi
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8SQ2H9J48M');
 </script>
 </html>
